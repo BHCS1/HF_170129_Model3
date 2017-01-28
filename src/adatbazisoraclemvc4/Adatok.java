@@ -25,8 +25,8 @@ public interface Adatok {
   
   String SQLRESZLEGEKDOLGOZOKLAJOS=
           "SELECT DISTINCT "
-          + "(CASE WHEN E.DEPARTMENT_ID IS NULL THEN 'Semmi' ELSE DEPARTMENT_NAME END) depName, "
-          + "FIRST_NAME || ' ' || LAST_NAME AS empName "
+          + "(CASE WHEN E.DEPARTMENT_ID IS NULL THEN ' Részleg nélküli' ELSE DEPARTMENT_NAME END) depName, "
+          + "FIRST_NAME || ' ' || LAST_NAME empName "
           + "FROM DEPARTMENTS D, EMPLOYEES E "
           + "WHERE D.DEPARTMENT_ID=E.DEPARTMENT_ID OR E.DEPARTMENT_ID IS NULL "
           + "ORDER BY depName, empName";
