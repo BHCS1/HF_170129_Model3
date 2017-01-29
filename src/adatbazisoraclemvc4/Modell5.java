@@ -22,7 +22,7 @@ public class Modell5 extends Modell {
           + "</head>";
 
   public Modell5() {
-    File htmlFile = new File("./files/index.html");
+    File htmlFile = new File("./index.html");
     htmlTartalmatKeszit(htmlFile);
   }
 
