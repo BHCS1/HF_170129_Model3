@@ -7,6 +7,7 @@ public class Start {
 //    Modell modell=new Modell3Lajos();
 //    Modell modell= new Modell3Gabi();
       Modell modell= new Modell3();
+//    Modell modell= new Modell5();
     new Nezet(modell).setVisible(true);
   }
   
