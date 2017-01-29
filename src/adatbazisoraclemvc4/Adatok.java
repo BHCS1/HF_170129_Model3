@@ -25,7 +25,7 @@ public interface Adatok {
   
   String SQLRESZLEGEKDOLGOZOKLAJOS=
           "SELECT DISTINCT "
-          + "(CASE WHEN E.DEPARTMENT_ID IS NULL THEN 'Semmi' ELSE DEPARTMENT_NAME END) depName, "
+          + "(CASE WHEN E.DEPARTMENT_ID IS NULL THEN ' Without department' ELSE DEPARTMENT_NAME END) depName, "
           + "FIRST_NAME || ' ' || LAST_NAME AS empName "
           + "FROM DEPARTMENTS D, EMPLOYEES E "
           + "WHERE D.DEPARTMENT_ID=E.DEPARTMENT_ID OR E.DEPARTMENT_ID IS NULL "
