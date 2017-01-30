@@ -11,7 +11,6 @@ import javax.swing.tree.DefaultTreeModel;
 
 public class Modell5 extends Modell {
 
-  private ArrayList<ReszlegDolgozo> lista = new ArrayList<>();
   private String htmlHead
           = "<head>\n"
           + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"

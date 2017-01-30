@@ -19,14 +19,14 @@ import javax.swing.tree.DefaultTreeModel;
 public class Modell3Feri extends Modell {
 
   @Override
-  protected DefaultTreeModel faModel() {
+  protected DefaultTreeModel faModell() {
     DefaultTreeModel faGyoker=null;
     try {
       DefaultMutableTreeNode node=new DefaultMutableTreeNode("Ceg");
       faGyoker=new DefaultTreeModel(node);
       kapcsolatNyit();
-      System.out.println(SQLDOLGOZÓKM3);
-      ResultSet eredmeny=kapcsolat.createStatement().executeQuery(SQLDOLGOZÓKM3);
+      System.out.println(SQLRESZLEGEKDOLGOZOK);
+      ResultSet eredmeny=kapcsolat.createStatement().executeQuery(SQLRESZLEGEKDOLGOZOK);
       boolean kezd=eredmeny.next();
       while (kezd) {
         String aktReszleg=eredmeny.getString("depName");
