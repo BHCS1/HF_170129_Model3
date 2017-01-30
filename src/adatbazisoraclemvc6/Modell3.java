@@ -2,8 +2,6 @@ package adatbazisoraclemvc6;
 
 import entities.Departments;
 import entities.Employees;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
