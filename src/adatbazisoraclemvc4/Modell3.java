@@ -19,7 +19,8 @@ public class Modell3 extends Modell {
       String aktReszleg = null;
       DefaultMutableTreeNode reszlegNode = null;
       while (eredmeny.next()) {
-        if (aktReszleg == null || !aktReszleg.equals(eredmeny.getString("depName"))) {
+        String depName = eredmeny.getString("depName");
+        if (reszlegNode == null || (depName!=null && !depName.equals(aktReszleg))) {
           aktReszleg = eredmeny.getString("depName");
           reszlegNode = new DefaultMutableTreeNode(aktReszleg!=null?aktReszleg:"Részleg nélküli");
           faGyoker.add(reszlegNode);
