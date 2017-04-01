@@ -37,7 +37,9 @@ public class Modell3 extends Modell {
       String empName = ((Employees) list.get(i)[0]).getFirstName() + " " + ((Employees) list.get(i)[0]).getLastName();
       reszlegNode.add(new DefaultMutableTreeNode(empName));
       String depName;
-      while (++i < list.size() && ((depName = list.get(i)[1] != null ? ((Departments) list.get(i)[1]).getDepartmentName() : null) == aktReszleg
+      while (++i < list.size() && 
+              // a következő feltétel csak akkor igaz, ha depName is null és az aktReszleg is null!!!
+              ((depName = list.get(i)[1] != null ? ((Departments) list.get(i)[1]).getDepartmentName() : null) == aktReszleg
               || (depName != null && depName.equals(aktReszleg)))) {
         reszlegNode.add(new DefaultMutableTreeNode(((Employees) list.get(i)[0]).getFirstName() + " " + ((Employees) list.get(i)[0]).getLastName()));
       }
