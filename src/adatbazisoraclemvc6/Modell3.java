@@ -2,8 +2,6 @@ package adatbazisoraclemvc6;
 
 import entities.Departments;
 import entities.Employees;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -29,6 +27,8 @@ public class Modell3 extends Modell {
     Query q = em.createQuery("SELECT e, d FROM Employees e LEFT JOIN e.departmentId d ORDER BY d.departmentName NULLS FIRST, e.firstName, e.lastName");
     List<Object[]> list = q.getResultList();
     em.getTransaction().commit();
+    em.close();
+    emf.close();
     int i = 0;
     while (i < list.size()) {
       String aktReszleg = list.get(i)[1] != null ? ((Departments) list.get(i)[1]).getDepartmentName() : null;
