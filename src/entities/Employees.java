@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -68,7 +69,7 @@ public class Employees implements Serializable {
   @Column(name = "COMMISSION_PCT")
   private BigDecimal commissionPct;
   @JoinColumn(name = "DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private Departments departmentId;
   @OneToMany(mappedBy = "managerId")
   private List<Employees> employeesList;
