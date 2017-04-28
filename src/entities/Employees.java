@@ -77,7 +77,7 @@ public class Employees implements Serializable {
   @ManyToOne
   private Employees managerId;
   @JoinColumn(name = "JOB_ID", referencedColumnName = "JOB_ID")
-  @ManyToOne(optional = false)
+  @ManyToOne(optional = false, fetch = FetchType.LAZY)
   private Jobs jobId;
   @OneToMany(mappedBy = "managerId")
   private List<Departments> departmentsList;

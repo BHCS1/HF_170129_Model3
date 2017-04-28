@@ -48,7 +48,7 @@ public class Departments implements Serializable {
   @ManyToOne
   private Employees managerId;
   @JoinColumn(name = "LOCATION_ID", referencedColumnName = "LOCATION_ID")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private Locations locationId;
 
   public Departments() {

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -51,7 +52,7 @@ public class Locations implements Serializable {
   @Column(name = "STATE_PROVINCE")
   private String stateProvince;
   @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "COUNTRY_ID")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private Countries countryId;
   @OneToMany(mappedBy = "locationId")
   private List<Departments> departmentsList;
@@ -147,7 +148,9 @@ public class Locations implements Serializable {
 
   @Override
   public String toString() {
-    return "entities.Locations[ locationId=" + locationId + " ]";
+    return "streetAddress=" + streetAddress + ", postalCode=" + postalCode + ", city=" + city + ", stateProvince=" + stateProvince;
   }
+
+  
 
 }
