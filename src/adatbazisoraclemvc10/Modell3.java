@@ -1,4 +1,4 @@
-package adatbazisoraclemvc8;
+package adatbazisoraclemvc10;
 
 import entities.Countries;
 import entities.Departments;
